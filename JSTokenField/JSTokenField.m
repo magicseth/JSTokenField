@@ -293,11 +293,10 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 	{
 		[lastLineTokens removeAllObjects];
 		textFieldFrame.size.width = self.frame.size.width;
-        textFieldFrame.origin = CGPointMake(WIDTH_PADDING * 2, 
+        textFieldFrame.origin = CGPointMake(WIDTH_PADDING,
                                             (currentRect.origin.y + currentRect.size.height + HEIGHT_PADDING));
 	}
 	
-	textFieldFrame.origin.y += HEIGHT_PADDING;
 	[_textField setFrame:textFieldFrame];
 	CGRect selfFrame = [self frame];
 	selfFrame.size.height = textFieldFrame.origin.y + textFieldFrame.size.height + HEIGHT_PADDING;
@@ -308,6 +307,11 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 		CGPoint tokenCenter = token.center;
 		tokenCenter.y = textFieldMidY;
 		token.center = tokenCenter;
+		
+		// make the origin integral
+		CGRect frame = token.frame;
+		frame.origin.y = roundf(frame.origin.y);
+		token.frame = frame;
 	}
 	
 	if (self.layer.presentationLayer == nil) {
