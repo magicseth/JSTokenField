@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/jasarien/JSTokenField"
   s.license = {:type => 'Simplified BSD', :file => 'README.mdown'}
   s.authors = {'James Addyman' => ''}
-  s.source   = { :git => 'https://github.com/magicseth/JSTokenField.git', :tag => "1.0.0"}
+  s.source   = { :git => 'https://github.com/magicseth/JSTokenField.git', :tag => "1.0.1"}
   s.platform     = :ios, '5.0'
   s.source_files = 'JSTokenField/JS*.{h,m}'
   s.resources    = 'JSTokenField/*.png'
